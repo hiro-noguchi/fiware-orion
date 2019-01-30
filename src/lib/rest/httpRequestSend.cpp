@@ -594,9 +594,9 @@ int httpRequestSendWithCurl
   LM_I(("Sending message %lu to HTTP server: sending message of %d bytes to HTTP server", callNo, outgoingMsgSize));
 
   res = curl_easy_perform(curl);
-  LM_E(("Response code is %d", res));
   if (res != CURLE_OK)
   {
+    LM_E(("Response code is %d", res));
     //
     // NOTE: This log line is used by the functional tests in cases/880_timeout_for_forward_and_notifications/
     //       So, this line should not be removed/altered, at least not without also modifying the functests.
