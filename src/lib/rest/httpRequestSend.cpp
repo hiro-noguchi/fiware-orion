@@ -594,6 +594,7 @@ int httpRequestSendWithCurl
   LM_I(("Sending message %lu to HTTP server: sending message of %d bytes to HTTP server", callNo, outgoingMsgSize));
 
   res = curl_easy_perform(curl);
+  LM_E(("Response code is %d", res));
   if (res != CURLE_OK)
   {
     //
